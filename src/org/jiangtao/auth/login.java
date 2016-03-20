@@ -1,13 +1,12 @@
 package org.jiangtao.auth;
 
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.support.ConnectionSource;
+
+import net.sf.json.JSONObject;
 import org.jiangtao.bean.Accounts;
-import org.jiangtao.utils.Collections;
+import org.jiangtao.daoImpl.AccountsDaoImpl;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.io.PrintWriter;
 
 /**
  * Created by MrJiang on 2016/3/17.
@@ -19,23 +18,14 @@ public class login extends javax.servlet.http.HttpServlet {
             throws javax.servlet.ServletException, IOException {
         response.setContentType("text/html:charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String name = request.getParameter("name");
+        PrintWriter out = response.getWriter();
+        String phone = request.getParameter("phone");
         String password = request.getParameter("password");
-        String token = request.getParameter("token");
-        ConnectionSource connectionSource = Collections.getInstance().openConnectionResource();
-        Dao<Accounts, String> accountDao = null;
-        try {
-            accountDao = DaoManager.createDao(connectionSource, Accounts.class);
-            System.out.println(name + "         " + password);
-            if (token==null||token.length()==0){
-                Accounts accounts = new Accounts("",name, password);
-                accountDao.create(accounts);
-            }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            Collections.getInstance().closeConnectionResource(connectionSource);
+        Accounts accounts = AccountsDaoImpl.getInstance().getAccount(phone, password);
+        if (accounts != null) {
+            JSONObject jsonObject = JSONObject.fromObject(accounts);
+            out.print(jsonObject);
         }
 
     }

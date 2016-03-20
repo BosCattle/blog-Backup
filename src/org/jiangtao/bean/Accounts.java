@@ -32,6 +32,10 @@ public class Accounts {
     public Accounts() {
     }
 
+    public Accounts(String token) {
+        this.token = token;
+    }
+
     public Accounts(String token, String phone, String password) {
         this.token = token;
         this.phone = phone;
