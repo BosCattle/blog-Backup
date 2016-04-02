@@ -2,7 +2,6 @@ package org.jiangtao.utils;
 
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
-
 import java.sql.SQLException;
 
 /**
@@ -12,7 +11,8 @@ import java.sql.SQLException;
  */
 public class Collections {
     private static Collections mCollections;
-    public static String databaseUrl = "jdbc:mysql://159.203.129.92:3306/monkey?user=mysql&password=123456&autoReconnect=true&failOverReadOnly=false";
+    public static String databaseUrl = "jdbc:mysql://159.203.129.92:3306/monkey?" +
+        "user=mysql&password=123456&autoReconnect=true&failOverReadOnly=false";
 
     private Collections() {
     }
@@ -54,5 +54,4 @@ public class Collections {
             e.printStackTrace();
         }
     }
-
 }
