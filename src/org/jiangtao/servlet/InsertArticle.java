@@ -24,11 +24,16 @@ public class InsertArticle extends HttpServlet {
     response.setContentType("text/html:charset=UTF-8");
     response.setCharacterEncoding("UTF-8");
     PrintWriter out = response.getWriter();
-    String accountId = request.getParameter("account_id");
-    String content = request.getParameter("content");
-    File directory = new File("");
-    String address = directory.getAbsolutePath();
-    Articles articles = ArticleDaoImpl.getInstance().writeArticle(content, accountId, address);
+    String accountId =
+        new String(request.getParameter("account_id").getBytes("iso-8859-1"), "UTF-8");
+    String content = new String(request.getParameter("content").getBytes("iso-8859-1"), "UTF-8");
+    String address = getServletContext().getRealPath("/");//项目绝对路径
+    Articles articles = null;
+    try {
+      articles = ArticleDaoImpl.getInstance().writeArticle(content, accountId, address);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
     Articles articles1 = ArticleDaoImpl.getInstance().insertArticle(articles);
     JSONObject object1 = JSONObject.fromObject(articles1);
     out.print(object1);

@@ -11,19 +11,22 @@ public class Articles {
   @DatabaseField(id = true, indexName = "id", columnName = "id")
   private int id;
   @DatabaseField(columnName = "account_id", canBeNull = false, unique = true)
-  private int accountId;
+  private int account_id;
   @DatabaseField(columnName = "article_address", canBeNull = false, unique = true)
-  private String articleAddress;
+  private String article_address;
+
+  public Articles() {
+  }
 
   public Articles(int accountId, String articleAddress) {
-    this.accountId = accountId;
-    this.articleAddress = articleAddress;
+    this.account_id = accountId;
+    this.article_address = articleAddress;
   }
 
   public Articles(int id, int accountId, String articleAddress) {
     this.id = id;
-    this.accountId = accountId;
-    this.articleAddress = articleAddress;
+    this.account_id = accountId;
+    this.article_address = articleAddress;
   }
 
   public int getId() {
@@ -35,26 +38,26 @@ public class Articles {
   }
 
   public int getAccountId() {
-    return accountId;
+    return account_id;
   }
 
   public void setAccountId(int accountId) {
-    this.accountId = accountId;
+    this.account_id = accountId;
   }
 
   public String getArticleAddress() {
-    return articleAddress;
+    return article_address;
   }
 
   public void setArticleAddress(String articleAddress) {
-    this.articleAddress = articleAddress;
+    this.article_address = articleAddress;
   }
 
   @Override public String toString() {
     return "Articles{" +
         "id=" + id +
-        ", accountId=" + accountId +
-        ", articleAddress='" + articleAddress + '\'' +
+        ", accountId=" + account_id +
+        ", articleAddress='" + article_address + '\'' +
         '}';
   }
 }
