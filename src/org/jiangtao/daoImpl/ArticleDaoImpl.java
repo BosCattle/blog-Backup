@@ -2,11 +2,13 @@ package org.jiangtao.daoImpl;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.support.ConnectionSource;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import org.jiangtao.bean.Articles;
 import org.jiangtao.utils.Collections;
@@ -42,7 +44,7 @@ public class ArticleDaoImpl {
       articleDao.createOrUpdate(articles);
       List<Articles> articlesList = articleDao.queryForAll();
       for (Articles article : articlesList) {
-        if (article.getAccountId() == articles.getAccountId()) {
+        if (article.getAccount_id() == articles.getAccount_id()) {
           return article;
         }
       }
@@ -57,7 +59,8 @@ public class ArticleDaoImpl {
   /**
    * 将文章写入本地，保存为html格式
    */
-  public Articles writeArticle(String content, String accountId, String address)
+  public Articles writeArticle(String content, String accountId, String address, String title,
+      String imageUrl)
       throws Exception {
     System.out.println(content);
     System.out.println(accountId);
@@ -69,7 +72,7 @@ public class ArticleDaoImpl {
       boolean isTrue = file.createNewFile();
       if (isTrue) {
         writeText(file.getPath(), content);
-        return new Articles(Integer.parseInt(accountId), file.getName());
+        return new Articles(Integer.parseInt(accountId), file.getName(), title, imageUrl);
       } else {
         throw new IOException("不能产生相应的文件");
       }
@@ -93,5 +96,23 @@ public class ArticleDaoImpl {
       assert o != null;
       o.close();
     }
+  }
+
+  public ArrayList<Articles> getAllArticles(String articleId) {
+    ArrayList<Articles> articles = new ArrayList<>();
+    collections = Collections.getInstance().openConnectionResource();
+    try {
+      articleDao = DaoManager.createDao(collections, Articles.class);
+      QueryBuilder<Articles, String> builder = articleDao.queryBuilder();
+      builder.where()
+          .between("id", Integer.parseInt(articleId),
+              Integer.parseInt(articleId) + 20);
+      articles = (ArrayList<Articles>) builder.query();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      Collections.getInstance().closeConnectionResource(collections);
+    }
+    return articles;
   }
 }
