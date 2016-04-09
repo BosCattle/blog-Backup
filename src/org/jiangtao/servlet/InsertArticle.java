@@ -28,14 +28,7 @@ public class InsertArticle extends HttpServlet {
     String content = new String(request.getParameter("content").getBytes("iso-8859-1"), "UTF-8");
     String title = new String(request.getParameter("title").getBytes("iso-8859-1"), "UTF-8");
     String imageUrl = new String(request.getParameter("image_url").getBytes("iso-8859-1"), "UTF-8");
-    String address = getServletContext().getRealPath("/");//项目绝对路径
-    Articles articles = null;
-    try {
-      articles =
-          ArticleDaoImpl.getInstance().writeArticle(content, accountId, address, title, imageUrl);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+    Articles articles = new Articles(Integer.parseInt(accountId), content, title, imageUrl);
     Articles articles1 = ArticleDaoImpl.getInstance().insertArticle(articles);
     JSONObject object1 = JSONObject.fromObject(articles1);
     out.print(object1);

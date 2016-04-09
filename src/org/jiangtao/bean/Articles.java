@@ -12,8 +12,8 @@ public class Articles {
   private int id;
   @DatabaseField(columnName = "account_id", canBeNull = false, unique = true)
   private int account_id;
-  @DatabaseField(columnName = "article_address", canBeNull = false, unique = true)
-  private String article_address;
+  @DatabaseField(columnName = "content", canBeNull = false, unique = true)
+  private String content;
   @DatabaseField(columnName = "title", canBeNull = false, unique = true)
   private String title;
   @DatabaseField(columnName = "image_url", canBeNull = true, unique = true)
@@ -22,22 +22,22 @@ public class Articles {
   public Articles() {
   }
 
-  public Articles(int accountId, String articleAddress) {
+  public Articles(int accountId, String content) {
     this.account_id = accountId;
-    this.article_address = articleAddress;
+    this.content = content;
   }
 
-  public Articles(int account_id, String article_address, String title, String image_url) {
+  public Articles(int account_id, String content, String title, String image_url) {
     this.account_id = account_id;
-    this.article_address = article_address;
+    this.content = content;
     this.title = title;
     this.image_url = image_url;
   }
 
-  public Articles(int id, int accountId, String articleAddress) {
+  public Articles(int id, int accountId, String content) {
     this.id = id;
     this.account_id = accountId;
-    this.article_address = articleAddress;
+    this.content = content;
   }
 
   public int getId() {
@@ -56,12 +56,12 @@ public class Articles {
     this.account_id = account_id;
   }
 
-  public String getArticle_address() {
-    return article_address;
+  public String getContent() {
+    return content;
   }
 
-  public void setArticle_address(String article_address) {
-    this.article_address = article_address;
+  public void setContent(String content) {
+    this.content = content;
   }
 
   public String getTitle() {
@@ -84,11 +84,9 @@ public class Articles {
     return "Articles{" +
         "id=" + id +
         ", account_id=" + account_id +
-        ", article_address='" + article_address + '\'' +
+        ", content='" + content + '\'' +
         ", title='" + title + '\'' +
         ", image_url='" + image_url + '\'' +
         '}';
   }
-
-
 }
