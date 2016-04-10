@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d59b361e-7ea8-42c5-b45c-e2901c195f24" name="Default" comment="article show&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/jiangtao/auth/ReviseAge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/jiangtao/auth/ReviseSex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/jiangtao/auth/ReviseUserName.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Monkey_war_exploded/WEB-INF/classes/org/jiangtao/daoImpl/AccountsDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/Monkey_war_exploded/WEB-INF/classes/org/jiangtao/daoImpl/AccountsDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/org/jiangtao/daoImpl/AccountsDaoImpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/org/jiangtao/daoImpl/AccountsDaoImpl.class" />
+    <list default="true" id="d59b361e-7ea8-42c5-b45c-e2901c195f24" name="Default" comment="fix&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java" afterPath="$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/jiangtao/daoImpl/AccountsDaoImpl.java" afterPath="$PROJECT_DIR$/src/org/jiangtao/daoImpl/AccountsDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/jiangtao/daoImpl/ArticleDaoImpl.java" afterPath="$PROJECT_DIR$/src/org/jiangtao/daoImpl/ArticleDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/jiangtao/servlet/InsertArticle.java" afterPath="$PROJECT_DIR$/src/org/jiangtao/servlet/InsertArticle.java" />
     </list>
     <ignored path="Monkey.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +44,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="docComment;class#ArticleServlet#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,9 +58,9 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#InsertArticle#0" expanded="true" />
-                <element signature="method#doGet#0;class#InsertArticle#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="docComment;class#InsertArticle#0" expanded="false" />
+                <element signature="method#doGet#0;class#InsertArticle#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,12 +71,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-              <folding>
-                <element signature="method#Articles#1;class#Articles#0" expanded="true" />
-                <element signature="method#Articles#2;class#Articles#0" expanded="true" />
-                <element signature="method#Articles#3;class#Articles#0" expanded="true" />
-                <element signature="method#toString#0;class#Articles#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,7 +79,7 @@
       <file leaf-file-name="ArticleDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/jiangtao/daoImpl/ArticleDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4095563">
+            <state vertical-scroll-proportion="0.33730835">
               <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
               <folding>
                 <element signature="method#getAllArticles#0;class#ArticleDaoImpl#0" expanded="true" />
@@ -175,7 +164,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="32" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -219,6 +208,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -233,8 +223,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -339,6 +327,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1071,7 +1060,10 @@
       <workItem from="1460124466736" duration="110000" />
       <workItem from="1460124628520" duration="1614000" />
       <workItem from="1460183774888" duration="972000" />
-      <workItem from="1460188724493" duration="9151000" />
+      <workItem from="1460188724493" duration="9890000" />
+      <workItem from="1460261630748" duration="547000" />
+      <workItem from="1460275892571" duration="28000" />
+      <workItem from="1460280934336" duration="779000" />
     </task>
     <task id="LOCAL-00001" summary="add README.md&#10;">
       <created>1458411503245</created>
@@ -1115,14 +1107,20 @@
       <option name="project" value="LOCAL" />
       <updated>1460125786813</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix&#10;">
+      <created>1460217605523</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1460217605523</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98498000" />
+    <option name="totallyTimeSpent" value="100591000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="32" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2159091" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1139,7 +1137,7 @@
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22692889" sideWeight="0.4715447" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19847329" sideWeight="0.4715447" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22692889" sideWeight="0.52845526" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2112462" sideWeight="0.49342105" order="1" side_tool="false" content_ui="tabs" />
@@ -1207,7 +1205,8 @@
     <MESSAGE value="article upload finish&#10;" />
     <MESSAGE value="qiniu token&#10;" />
     <MESSAGE value="article show&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="article show&#10;" />
+    <MESSAGE value="fix&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix&#10;" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1505,7 +1504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45051193">
           <caret line="20" column="47" selection-start-line="18" selection-start-column="7" selection-end-line="20" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,7 +1511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62457335">
           <caret line="31" column="31" selection-start-line="30" selection-start-column="11" selection-end-line="31" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1521,7 +1518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63822526">
           <caret line="28" column="53" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1529,9 +1525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33788395">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#ReviseSex#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1539,9 +1532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8634812">
           <caret line="32" column="5" selection-start-line="22" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#ReviseUserName#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1549,12 +1539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28668943">
           <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
-          <folding>
-            <element signature="method#getInstance#0;class#AccountsDaoImpl#0" expanded="true" />
-            <element signature="method#getAccount#0;class#AccountsDaoImpl#0" expanded="true" />
-            <element signature="method#updateAccounts#0;class#AccountsDaoImpl#0" expanded="true" />
-            <element signature="method#updateAccountsAge#0;class#AccountsDaoImpl#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1562,22 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3327645">
           <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding>
-            <element signature="method#QueryBuilder#0;class#QueryBuilder#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="method#Articles#1;class#Articles#0" expanded="true" />
-            <element signature="method#Articles#2;class#Articles#0" expanded="true" />
-            <element signature="method#Articles#3;class#Articles#0" expanded="true" />
-            <element signature="method#toString#0;class#Articles#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1585,7 +1553,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#ArticleServlet#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1594,16 +1565,24 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#InsertArticle#0" expanded="true" />
-            <element signature="method#doGet#0;class#InsertArticle#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#InsertArticle#0" expanded="false" />
+            <element signature="method#doGet#0;class#InsertArticle#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jiangtao/daoImpl/ArticleDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4095563">
+        <state vertical-scroll-proportion="0.33730835">
           <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
           <folding>
             <element signature="method#getAllArticles#0;class#ArticleDaoImpl#0" expanded="true" />
