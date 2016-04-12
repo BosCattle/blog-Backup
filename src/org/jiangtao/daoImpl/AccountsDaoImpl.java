@@ -2,9 +2,11 @@ package org.jiangtao.daoImpl;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.stmt.QueryBuilder;
 import com.j256.ormlite.stmt.UpdateBuilder;
 import com.j256.ormlite.support.ConnectionSource;
 import org.jiangtao.bean.Accounts;
+import org.jiangtao.bean.Articles;
 import org.jiangtao.utils.Collections;
 import org.jiangtao.utils.TokenProcessor;
 
@@ -30,6 +32,23 @@ public class AccountsDaoImpl {
       }
     }
     return instance;
+  }
+
+  public Accounts getAccount(String accountId) {
+    collections = Collections.getInstance().openConnectionResource();
+    try {
+      accountDao = DaoManager.createDao(collections, Accounts.class);
+      QueryBuilder<Accounts, String> builder = accountDao.queryBuilder();
+      Accounts accounts = accountDao.queryForId(accountId);
+      if (accounts != null) {
+        return accounts;
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      Collections.getInstance().closeConnectionResource(collections);
+    }
+    return null;
   }
 
   public Accounts getAccount(String phone, String password) {

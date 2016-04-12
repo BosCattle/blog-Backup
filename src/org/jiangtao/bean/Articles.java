@@ -1,7 +1,9 @@
 package org.jiangtao.bean;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import java.io.Serializable;
 
 /**
  * Created by MrJiang on 4/2/2016. article model
@@ -12,6 +14,8 @@ public class Articles {
   private int id;
   @DatabaseField(columnName = "account_id", canBeNull = false, unique = true)
   private int account_id;
+  @DatabaseField(dataType = DataType.SERIALIZABLE)
+  private Accounts accounts;
   @DatabaseField(columnName = "content", canBeNull = false, unique = true)
   private String content;
   @DatabaseField(columnName = "title", canBeNull = false, unique = true)
@@ -34,10 +38,27 @@ public class Articles {
     this.image_url = image_url;
   }
 
+  public Articles(int account_id, String content, String title, String image_url,
+      Accounts accounts) {
+    this.account_id = account_id;
+    this.content = content;
+    this.title = title;
+    this.image_url = image_url;
+    this.accounts = accounts;
+  }
+
   public Articles(int id, int accountId, String content) {
     this.id = id;
     this.account_id = accountId;
     this.content = content;
+  }
+
+  public Accounts getAccounts() {
+    return accounts;
+  }
+
+  public void setAccounts(Accounts accounts) {
+    this.accounts = accounts;
   }
 
   public int getId() {
@@ -84,6 +105,7 @@ public class Articles {
     return "Articles{" +
         "id=" + id +
         ", account_id=" + account_id +
+        ", accounts=" + accounts +
         ", content='" + content + '\'' +
         ", title='" + title + '\'' +
         ", image_url='" + image_url + '\'' +

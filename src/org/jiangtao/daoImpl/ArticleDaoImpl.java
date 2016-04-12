@@ -41,7 +41,7 @@ public class ArticleDaoImpl {
     collections = Collections.getInstance().openConnectionResource();
     try {
       articleDao = DaoManager.createDao(collections, Articles.class);
-      articleDao.create(articles);
+      articleDao.createOrUpdate(articles);
       List<Articles> articlesList = articleDao.queryForAll();
       for (Articles article : articlesList) {
         if (article.getAccount_id() == articles.getAccount_id()) {

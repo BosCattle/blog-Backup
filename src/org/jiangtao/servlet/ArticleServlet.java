@@ -26,7 +26,6 @@ public class ArticleServlet extends HttpServlet {
     PrintWriter out = response.getWriter();
     String sinceId = request.getParameter("max-id");
     ArrayList<Articles> lists = ArticleDaoImpl.getInstance().getAllArticles(sinceId);
-    System.out.println("测试");
     JSONArray array = JSONArray.fromObject(lists);
     out.print(array.toString());
   }
