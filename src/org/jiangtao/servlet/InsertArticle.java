@@ -31,9 +31,6 @@ public class InsertArticle extends HttpServlet {
     String content = new String(request.getParameter("content").getBytes("iso-8859-1"), "UTF-8");
     String title = new String(request.getParameter("title").getBytes("iso-8859-1"), "UTF-8");
     imageUrl = new String(request.getParameter("image_url").getBytes("iso-8859-1"), "UTF-8");
-    if (imageUrl == null) {
-      imageUrl = "";
-    }
     Accounts accounts = AccountsDaoImpl.getInstance().getAccount(accountId);
     System.out.println("测试");
     Articles articles =
