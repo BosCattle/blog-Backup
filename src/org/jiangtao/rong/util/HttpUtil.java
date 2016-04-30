@@ -1,7 +1,7 @@
-package org.jiangtao.io.rong.util;
+package org.jiangtao.rong.util;
 
 
-import org.jiangtao.io.rong.models.SdkHttpResult;
+import org.jiangtao.rong.models.SdkHttpResult;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -77,15 +77,15 @@ public class HttpUtil {
 
 	// 添加签名header
 	public static HttpURLConnection CreatePostHttpConnection(String appKey,
-			String appSecret, String uri) throws MalformedURLException,
-			IOException, ProtocolException {
+															 String appSecret, String uri) throws
+			IOException {
 		return CreatePostHttpConnection(appKey, appSecret, uri,
 				"application/x-www-form-urlencoded");
 	}
 
 	public static HttpURLConnection CreateJsonPostHttpConnection(String appKey,
-			String appSecret, String uri) throws MalformedURLException,
-			IOException, ProtocolException {
+																 String appSecret, String uri) throws
+			IOException {
 		return CreatePostHttpConnection(appKey, appSecret, uri,
 				"application/json");
 	}
@@ -100,7 +100,7 @@ public class HttpUtil {
 
 	private static HttpURLConnection CreatePostHttpConnection(String appKey,
 			String appSecret, String uri, String contentType)
-			throws MalformedURLException, IOException, ProtocolException {
+			throws IOException {
 		String nonce = String.valueOf(Math.random() * 1000000);
 		String timestamp = String.valueOf(System.currentTimeMillis() / 1000);
 		StringBuilder toSign = new StringBuilder(appSecret).append(nonce)
@@ -140,7 +140,7 @@ public class HttpUtil {
 	}
 
 	public static SdkHttpResult returnResult(HttpURLConnection conn)
-			throws Exception, IOException {
+			throws Exception {
 		String result;
 		InputStream input = null;
 		if (conn.getResponseCode() == 200) {

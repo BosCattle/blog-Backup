@@ -1,4 +1,4 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
 
 //消息基类，如实现自定义消息，可继承此类

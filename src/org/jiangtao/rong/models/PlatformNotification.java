@@ -1,4 +1,4 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
 import java.util.Map;
 

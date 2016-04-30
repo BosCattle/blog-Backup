@@ -1,4 +1,4 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
 //对server sdk返回的封装
 public class SdkHttpResult {

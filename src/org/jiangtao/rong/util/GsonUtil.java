@@ -1,4 +1,4 @@
-package org.jiangtao.io.rong.util;
+package org.jiangtao.rong.util;
 
 import java.lang.reflect.Type;
 

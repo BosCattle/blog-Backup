@@ -1,4 +1,4 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
 /**
  * Created by MrJiang on 4/24/2016.

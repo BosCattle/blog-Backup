@@ -1,4 +1,4 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
 //请求格式
 public enum FormatType {
@@ -11,7 +11,7 @@ public enum FormatType {
 		return index;
 	}
 
-	private FormatType(String name, int index) {
+	FormatType(String name, int index) {
 		this.name = name;
 		this.index = index;
 	}

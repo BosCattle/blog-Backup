@@ -1,12 +1,11 @@
 package org.jiangtao.servlet;
 
 import net.sf.json.JSONObject;
-import net.sf.json.JsonConfig;
-import org.jiangtao.io.rong.ApiHttpClient;
-import org.jiangtao.io.rong.models.FormatType;
-import org.jiangtao.io.rong.models.RongYun;
-import org.jiangtao.io.rong.models.SdkHttpResult;
-import org.jiangtao.utils.Profile;
+import org.jiangtao.rong.ApiHttpClient;
+import org.jiangtao.rong.models.FormatType;
+import org.jiangtao.rong.models.RongYun;
+import org.jiangtao.rong.models.SdkHttpResult;
+import org.jiangtao.utils.Profiles;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,13 +28,17 @@ public class RongYunTokenServlet extends HttpServlet {
         String portraitUri = request.getParameter("portraitUri");
         SdkHttpResult token = null;
         try {
-            token = ApiHttpClient.getToken(Profile.APP_KEY,Profile.App_Secret,userId,userName,portraitUri, FormatType.json);
+            token = ApiHttpClient.getToken(Profiles.APP_KEY, Profiles.App_Secret, userId, userName, portraitUri, FormatType.json);
         } catch (Exception e) {
             e.printStackTrace();
         }
         if (token!=null) {
-            RongYun rongyun = new RongYun(userId, userName, portraitUri, token.getResult());
+            JSONObject objectToken = JSONObject.fromObject(token.getResult());
+            String realToken = objectToken.getString("token");
+            System.out.println(realToken);
+            RongYun rongyun = new RongYun(userId, userName, portraitUri, realToken);
             JSONObject object = JSONObject.fromObject(rongyun);
+            System.out.println(object.toString());
             out.print(object.toString());
         }
     }

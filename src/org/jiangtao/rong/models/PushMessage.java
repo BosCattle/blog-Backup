@@ -1,11 +1,8 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
-import org.jiangtao.io.rong.util.GsonUtil;
+import org.jiangtao.rong.util.GsonUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PushMessage {
 	private List<String> platform;

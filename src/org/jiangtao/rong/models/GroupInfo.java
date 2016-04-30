@@ -1,11 +1,12 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
-//聊天室信息
-public class ChatroomInfo {
+//群信息
+public class GroupInfo {
+
 	private String id;
 	private String name;
 
-	public ChatroomInfo(String id, String name) {
+	public GroupInfo(String id, String name) {
 		this.name = name;
 		this.id = id;
 	}
@@ -28,6 +29,7 @@ public class ChatroomInfo {
 
 	@Override
 	public String toString() {
-		return String.format("{\"id\":\"%s\",\"name\":\"%s\"}", id,name);
+		return String.format("{\"id\":\"%s\",\"name\":\"%s\"}", id, name);
 	}
+
 }

@@ -1,7 +1,7 @@
-package org.jiangtao.io.rong.models;
+package org.jiangtao.rong.models;
 
 
-import org.jiangtao.io.rong.util.GsonUtil;
+import org.jiangtao.rong.util.GsonUtil;
 
 //添加联系人消息
 public class ContactNtfMessage extends Message {

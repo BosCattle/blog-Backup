@@ -1,8 +1,8 @@
-package org.jiangtao.io.rong;
+package org.jiangtao.rong;
 
 
-import org.jiangtao.io.rong.models.*;
-import org.jiangtao.io.rong.util.HttpUtil;
+import org.jiangtao.rong.util.HttpUtil;
+import org.jiangtao.rong.models.*;
 
 import java.net.HttpURLConnection;
 import java.net.URLEncoder;
@@ -26,7 +26,7 @@ public class ApiHttpClient {
 		StringBuilder sb = new StringBuilder();
 		sb.append("userId=").append(URLEncoder.encode(userId, UTF8));
 		sb.append("&name=").append(URLEncoder.encode(userName==null?"":userName, UTF8));
-		sb.append("&portraitUri=").append(URLEncoder.encode(portraitUri==null?"":portraitUri, UTF8));
+		sb.append("&portraitUri=").append(URLEncoder.encode(portraitUri == null ? "http://img4.duitang.com/uploads/item/201508/11/20150811194252_BjcQe.jpeg" : portraitUri, UTF8));
 		HttpUtil.setBodyParameter(sb, conn);
 
 		return HttpUtil.returnResult(conn);
@@ -288,7 +288,7 @@ public class ApiHttpClient {
 
 	// 同步用户群信息
 	public static SdkHttpResult syncGroup(String appKey, String appSecret,
-			String userId, List<GroupInfo> groups, FormatType format)
+										  String userId, List<GroupInfo> groups, FormatType format)
 			throws Exception {
 
 		HttpURLConnection conn = HttpUtil.CreatePostHttpConnection(appKey,
@@ -762,7 +762,7 @@ public class ApiHttpClient {
 
 	//发送不落地push
 	public static SdkHttpResult push(String appKey, String appSecret,
-			PushMessage message, FormatType format) throws Exception {
+									 PushMessage message, FormatType format) throws Exception {
 
 		HttpURLConnection conn = HttpUtil.CreateJsonPostHttpConnection(appKey,
 				appSecret, RONGCLOUDURI + "/push." + format.toString());

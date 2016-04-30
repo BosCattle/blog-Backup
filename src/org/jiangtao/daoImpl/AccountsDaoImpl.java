@@ -18,109 +18,124 @@ import java.util.ArrayList;
  */
 public class AccountsDaoImpl {
 
-  private static AccountsDaoImpl instance;
-  private ConnectionSource collections;
-  private Dao<Accounts, java.lang.String> accountDao;
+    private static AccountsDaoImpl instance;
+    private ConnectionSource collections;
+    private Dao<Accounts, java.lang.String> accountDao;
 
-  private AccountsDaoImpl() {
-  }
-
-  public static AccountsDaoImpl getInstance() {
-    if (instance == null) {
-      synchronized (AccountsDaoImpl.class) {
-        instance = new AccountsDaoImpl();
-      }
+    private AccountsDaoImpl() {
     }
-    return instance;
-  }
 
-  public Accounts getAccount(String accountId) {
-    collections = Collections.getInstance().openConnectionResource();
-    try {
-      accountDao = DaoManager.createDao(collections, Accounts.class);
-      QueryBuilder<Accounts, String> builder = accountDao.queryBuilder();
-      Accounts accounts = accountDao.queryForId(accountId);
-      if (accounts != null) {
-        return accounts;
-      }
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      Collections.getInstance().closeConnectionResource(collections);
-    }
-    return null;
-  }
-
-  public Accounts getAccount(String phone, String password) {
-
-    collections = Collections.getInstance().openConnectionResource();
-    try {
-      accountDao = DaoManager.createDao(collections, Accounts.class);
-      ArrayList<Accounts> accountsArrayList = (ArrayList<Accounts>) accountDao.queryForAll();
-      if (accountsArrayList != null) {
-        for (Accounts accounts : accountsArrayList) {
-          if (phone.equals(accounts.getPhone()) && password.equals(accounts.getPassword())) {
-            java.lang.String token = TokenProcessor.getInstance().generateToken(phone, true);
-            Accounts accounts1 = new Accounts(token);
-            accountDao.updateId(accounts1, accounts.getId() + "");
-            Accounts accounts2 = accountDao.queryForId(accounts.getId() + "");
-            return accounts2;
-          }
+    public static AccountsDaoImpl getInstance() {
+        if (instance == null) {
+            synchronized (AccountsDaoImpl.class) {
+                instance = new AccountsDaoImpl();
+            }
         }
-      }
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      Collections.getInstance().closeConnectionResource(collections);
+        return instance;
     }
-    return null;
-  }
 
-  public Accounts updateAccounts(String userName, String id) {
-    collections = Collections.getInstance().openConnectionResource();
-    try {
-      accountDao = DaoManager.createDao(collections, Accounts.class);
-      Accounts accounts = accountDao.queryForId(id);
-      accounts.setUsername(userName);
-      accountDao.update(accounts);
-      return accounts;
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      Collections.getInstance().closeConnectionResource(collections);
+    public Accounts getAccount(String accountId) {
+        collections = Collections.getInstance().openConnectionResource();
+        try {
+            accountDao = DaoManager.createDao(collections, Accounts.class);
+            QueryBuilder<Accounts, String> builder = accountDao.queryBuilder();
+            Accounts accounts = accountDao.queryForId(accountId);
+            if (accounts != null) {
+                return accounts;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Collections.getInstance().closeConnectionResource(collections);
+        }
+        return null;
     }
-    return null;
-  }
 
-  public Accounts updateAccountsSex(String sex, String id) {
-    collections = Collections.getInstance().openConnectionResource();
-    try {
-      accountDao = DaoManager.createDao(collections, Accounts.class);
-      Accounts accounts = accountDao.queryForId(id);
-      accounts.setSex(sex);
-      accountDao.update(accounts);
-      return accounts;
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      Collections.getInstance().closeConnectionResource(collections);
-    }
-    return null;
-  }
+    public Accounts getAccount(String phone, String password) {
 
-  public Accounts updateAccountsAge(String age, String id) {
-    collections = Collections.getInstance().openConnectionResource();
-    try {
-      accountDao = DaoManager.createDao(collections, Accounts.class);
-      Accounts accounts = accountDao.queryForId(id);
-      accounts.setAge(age);
-      accountDao.update(accounts);
-      return accounts;
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      Collections.getInstance().closeConnectionResource(collections);
+        collections = Collections.getInstance().openConnectionResource();
+        try {
+            accountDao = DaoManager.createDao(collections, Accounts.class);
+            ArrayList<Accounts> accountsArrayList = (ArrayList<Accounts>) accountDao.queryForAll();
+            if (accountsArrayList != null) {
+                for (Accounts accounts : accountsArrayList) {
+                    if (phone.equals(accounts.getPhone()) && password.equals(accounts.getPassword())) {
+                        java.lang.String token = TokenProcessor.getInstance().generateToken(phone, true);
+                        Accounts accounts1 = new Accounts(token);
+                        accountDao.updateId(accounts1, accounts.getId() + "");
+                        Accounts accounts2 = accountDao.queryForId(accounts.getId() + "");
+                        return accounts2;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Collections.getInstance().closeConnectionResource(collections);
+        }
+        return null;
     }
-    return null;
-  }
+
+    public Accounts updateAccounts(String userName, String id) {
+        collections = Collections.getInstance().openConnectionResource();
+        try {
+            accountDao = DaoManager.createDao(collections, Accounts.class);
+            Accounts accounts = accountDao.queryForId(id);
+            accounts.setUsername(userName);
+            accountDao.update(accounts);
+            return accounts;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Collections.getInstance().closeConnectionResource(collections);
+        }
+        return null;
+    }
+
+    public Accounts updateAccountsSex(String sex, String id) {
+        collections = Collections.getInstance().openConnectionResource();
+        try {
+            accountDao = DaoManager.createDao(collections, Accounts.class);
+            Accounts accounts = accountDao.queryForId(id);
+            accounts.setSex(sex);
+            accountDao.update(accounts);
+            return accounts;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Collections.getInstance().closeConnectionResource(collections);
+        }
+        return null;
+    }
+
+    public Accounts updateAccountsAge(String age, String id) {
+        collections = Collections.getInstance().openConnectionResource();
+        try {
+            accountDao = DaoManager.createDao(collections, Accounts.class);
+            Accounts accounts = accountDao.queryForId(id);
+            accounts.setAge(age);
+            accountDao.update(accounts);
+            return accounts;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Collections.getInstance().closeConnectionResource(collections);
+        }
+        return null;
+    }
+
+    public ArrayList<Accounts> getAllAccount() {
+
+        collections = Collections.getInstance().openConnectionResource();
+        try {
+            accountDao = DaoManager.createDao(collections, Accounts.class);
+            ArrayList<Accounts> accountsArrayList = (ArrayList<Accounts>) accountDao.queryForAll();
+            return accountsArrayList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            Collections.getInstance().closeConnectionResource(collections);
+        }
+        return null;
+    }
 }
