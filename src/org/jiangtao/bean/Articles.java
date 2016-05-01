@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * Created by MrJiang on 4/2/2016. article model
@@ -22,8 +23,18 @@ public class Articles {
   private String title;
   @DatabaseField(columnName = "image_url", canBeNull = true, unique = true)
   private String image_url;
+  @DatabaseField(columnName = "create_at",canBeNull = false)
+  public long create_at;
 
-  public Articles() {
+    public long getCreate_at() {
+        return create_at;
+    }
+
+    public void setCreate_at(long create_at) {
+        this.create_at = create_at;
+    }
+
+    public Articles() {
   }
 
   public Articles(int accountId, String content) {

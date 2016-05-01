@@ -2,6 +2,7 @@ package org.jiangtao.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,8 @@ public class InsertArticle extends HttpServlet {
     System.out.println("测试");
     Articles articles =
         new Articles(Integer.parseInt(accountId), content, title, imageUrl, accounts);
+    Timestamp time1 = new Timestamp(System.currentTimeMillis());
+    articles.create_at = time1.getTime();
     Articles articles1 = ArticleDaoImpl.getInstance().insertArticle(articles);
     JSONObject object1 = JSONObject.fromObject(articles1);
     out.print(object1);

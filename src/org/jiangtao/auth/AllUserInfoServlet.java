@@ -1,6 +1,5 @@
 package org.jiangtao.auth;
 
-import com.google.gson.JsonObject;
 import net.sf.json.JSONArray;
 import org.jiangtao.bean.Accounts;
 import org.jiangtao.daoImpl.AccountsDaoImpl;
