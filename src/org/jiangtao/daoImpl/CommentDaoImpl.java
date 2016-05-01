@@ -68,7 +68,7 @@ public class CommentDaoImpl {
      * @param parentID
      * @return
      */
-    public ArrayList<Comment> insertComment(int articleId, String content, int isParent, int accountId, int parentID) {
+    public synchronized ArrayList<Comment> insertComment(int articleId, String content, int isParent, int accountId, int parentID) {
         Comment comment = new Comment();
         comment.setContent(content);
         comment.setArticle_id(articleId);
@@ -77,14 +77,12 @@ public class CommentDaoImpl {
         comment.setParent_id(isParent);
         Accounts accounts = AccountsDaoImpl.getInstance().getAccount(String.valueOf(accountId));
         comment.setAccount(accounts);
-        if (isParent != 0) {
-            Accounts parentAccounts = AccountsDaoImpl.getInstance().getAccount(String.valueOf(isParent));
-            comment.setParent_account(parentAccounts);
-        }
+        Accounts parentAccounts = AccountsDaoImpl.getInstance().getAccount(String.valueOf(parentID));
+        comment.setParent_account(parentAccounts);
         collections = Collections.getInstance().openConnectionResource();
         try {
             mCommentDao = DaoManager.createDao(collections, Comment.class);
-            mCommentDao.createOrUpdate(comment);
+            mCommentDao.create(comment);
             return getAllComment(String.valueOf(articleId));
         } catch (SQLException e) {
             e.printStackTrace();
