@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d59b361e-7ea8-42c5-b45c-e2901c195f24" name="Default" comment="fix article&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/jiangtao/bean/IsFocus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/jiangtao/servlet/IsFocusServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/jiangtao/servlet/PersonalFocusServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java" afterPath="$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/jiangtao/servlet/MyPublishServlet.java" afterPath="$PROJECT_DIR$/src/org/jiangtao/servlet/MyPublishServlet.java" />
     </list>
     <list id="3527f6fa-af6e-4523-a591-45243297f2dc" name="New changelist" comment="" />
     <ignored path="Monkey.iws" />
@@ -54,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FocusDaoImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FocusDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="7" selection-start-line="144" selection-start-column="7" selection-end-line="144" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.60647357">
+              <caret line="76" column="55" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,27 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/org/jiangtao/servlet/PersonalFocusServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Articles.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/jiangtao/servlet/ArticleServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6081772">
-              <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -174,10 +149,10 @@
         <option value="$PROJECT_DIR$/src/org/jiangtao/utils/Collections.java" />
         <option value="$PROJECT_DIR$/src/org/jiangtao/servlet/IsFocusServlet.java" />
         <option value="$PROJECT_DIR$/src/org/jiangtao/bean/IsFocus.java" />
-        <option value="$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/org/jiangtao/servlet/PersonalFocusServlet.java" />
         <option value="$PROJECT_DIR$/src/org/jiangtao/servlet/PersonalArticleServlet.java" />
         <option value="$PROJECT_DIR$/src/org/jiangtao/servlet/MyPublishServlet.java" />
+        <option value="$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -1370,7 +1345,7 @@
       <workItem from="1462038232037" duration="427000" />
       <workItem from="1462089985158" duration="11683000" />
       <workItem from="1462103547695" duration="20452000" />
-      <workItem from="1462168351133" duration="7704000" />
+      <workItem from="1462168351133" duration="8444000" />
     </task>
     <task id="LOCAL-00001" summary="add README.md&#10;">
       <created>1458411503245</created>
@@ -1442,10 +1417,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174954000" />
+    <option name="totallyTimeSpent" value="175694000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="32" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1872,36 +1847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="7" selection-start-line="144" selection-start-column="7" selection-end-line="144" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/servlet/PersonalFocusServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="72" selection-start-line="18" selection-start-column="72" selection-end-line="18" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jiangtao/servlet/AddFocusServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49914822">
           <caret line="25" column="47" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1942,9 +1891,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/jiangtao/servlet/ArticleServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6081772">
-          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.46507666">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/bean/Articles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28620103">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/servlet/PersonalFocusServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/jiangtao/daoImpl/FocusDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60647357">
+          <caret line="76" column="55" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

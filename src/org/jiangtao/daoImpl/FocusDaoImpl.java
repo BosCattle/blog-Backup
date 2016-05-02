@@ -48,9 +48,11 @@ public class FocusDaoImpl {
             Focus focus = new Focus();
             focus.setAccount_id(Integer.parseInt(account_id));
             Accounts accounts = AccountsDaoImpl.getInstance().getAccount(focus_id);
-            if (accounts != null) {
-                focus.setAccount_focus(accounts);
-                mFocusDao.create(focus);
+            if (!isFocus(account_id,focus_id).getIs_focus()) {
+                if (accounts != null) {
+                    focus.setAccount_focus(accounts);
+                    mFocusDao.create(focus);
+                }
             }
 
         } catch (SQLException e) {
