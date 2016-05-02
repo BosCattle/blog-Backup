@@ -1,8 +1,8 @@
 package org.jiangtao.servlet;
 
 import net.sf.json.JSONArray;
-import org.jiangtao.bean.Articles;
-import org.jiangtao.daoImpl.ArticleDaoImpl;
+import org.jiangtao.bean.Focus;
+import org.jiangtao.daoImpl.FocusDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,18 +15,16 @@ import java.util.ArrayList;
 
 /**
  * Created by MrJiang on 5/2/2016.
- * 用户发表文章
  */
-@WebServlet(name = "MyPublishServlet", urlPatterns = "/article/mine")
-public class MyPublishServlet extends HttpServlet {
-
+@WebServlet(name = "PersonalFocusServlet",urlPatterns = "/focus/personal")
+public class PersonalFocusServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html:charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         String account_id = request.getParameter("account_id");
-        ArrayList<Articles> articles = ArticleDaoImpl.getInstance().getPublishArticle(account_id);
-        JSONArray array = JSONArray.fromObject(articles);
+        ArrayList<Focus> focuses = FocusDaoImpl.getInstance().getPersonalAllFocus(account_id);
+        JSONArray array = JSONArray.fromObject(focuses);
         out.print(array.toString());
     }
 }
