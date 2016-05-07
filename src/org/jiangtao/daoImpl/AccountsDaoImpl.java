@@ -45,8 +45,6 @@ public class AccountsDaoImpl {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            Collections.getInstance().closeConnectionResource(collections);
         }
         return null;
     }
